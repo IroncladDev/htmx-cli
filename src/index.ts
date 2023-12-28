@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from "commander";
+import packageJson from "../package.json";
 
 // CLI Information
 program
@@ -8,6 +9,6 @@ program
   .description(
     "A simple, lightweight HTMX Scaffolding CLI for making laser horses 'n stuff.",
   )
-  .version("0.0.1");
+  .version(packageJson.version);
 
 program.parse(process.argv);

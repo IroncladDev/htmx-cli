@@ -1,16 +1,16 @@
 {
   "name": "htmx-cli",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Fedi UI Injection CLI",
   "main": "index.js",
   "scripts": {
     "build": "bun ./src/build/index.ts",
     "watch": "bun ./src/build/watch.ts",
-    "publish": "bun run build && npm publish",
-    "format": "prettier --write src/**/*.{ts,tsx}"
+    "prepublishOnly": "bun run format && bun run build",
+    "format": "prettier \"./src/**/*.ts\" --write --ignore-unknown"
   },
   "bin": {
-    "htmx-cli": "./dist/index.js"
+    "htmx-cli": "dist/index.js"
   },
   "type": "module",
   "keywords": [],

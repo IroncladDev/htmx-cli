@@ -1,0 +1,32 @@
+{
+  "name": "htmx-cli",
+  "version": "0.0.1",
+  "description": "Fedi UI Injection CLI",
+  "main": "index.js",
+  "scripts": {
+    "build": "bun ./src/build/index.ts",
+    "watch": "bun ./src/build/watch.ts",
+    "publish": "bun run build && npm publish",
+    "format": "prettier --write src/**/*.{ts,tsx}"
+  },
+  "bin": {
+    "htmx-cli": "./dist/index.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "bun-types": "^1.0.20",
+    "eslint": "^8.56.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.12"
+  }
+}

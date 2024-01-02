@@ -1,7 +1,7 @@
 {
   "name": "htmx-cli",
   "version": "1.0.0",
-  "description": "Fedi UI Injection CLI",
+  "description": "Kickstart your next HTMX project",
   "main": "index.js",
   "scripts": {
     "build": "bun ./src/build/index.ts",

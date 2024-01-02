@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Welcome to htmx! Sorry!</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+
+    <style>
+      body {
+        font-family: "Comic Sans MS", sans-serif;
+        padding: 100px;
+      }
+
+      #images {
+        display: grid;
+        place-content: center;
+        place-items: center;
+      }
+
+      #images img {
+        /* display: absolute; */
+
+        grid-column: 1;
+        grid-row: 1;
+        opacity: 0;
+        border-radius: 16px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <h1>Oh no! You're using htmx!</h1>
+
+      <div id="images">
+        <img src="apus/sad0.png" />
+      </div>
+
+      <b> htmx version: <span id="htmx-version"></span></b>
+    </center>
+
+    <script>
+      document.getElementById("htmx-version").innerText = htmx.version;
+    </script>
+  </body>
+</html>

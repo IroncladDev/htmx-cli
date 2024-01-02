@@ -1,14 +1,16 @@
 import path from "path";
+import fs from "fs-extra";
 
 export async function build() {
-  await Bun.build({
+  const { success, logs } = await Bun.build({
     entrypoints: ["./src/index.ts"],
     outdir: "./dist",
     target: "node",
-  }).catch((err) => {
-    console.error(err);
-    process.exit(1);
   });
+
+  if (!success) {
+    console.log("\n", logs[0], "\n");
+  }
 
   // Temporary solution to fix bun build "import.meta.require" error
   const pathToBuildedFile = path.resolve("./dist/index.js");
@@ -31,6 +33,8 @@ export async function build() {
       "return createRequire(import.meta.url)(id);",
     );
   }
+
+  await fs.copy("./src/files", "./dist/files");
 
   await Bun.write(outputFile, inputFileText);
 }
